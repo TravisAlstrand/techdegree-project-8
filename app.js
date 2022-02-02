@@ -5,6 +5,8 @@ const gridContainer = document.querySelector('.grid-container');
 const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector('.modal-content');
 const modalClose = document.querySelector('.modal-close');
+const searchBar = document.getElementById('search');
+let employeeCards = document.getElementsByClassName('.card');
 
 // 'fetch' data from API
 fetch(urlAPI)
@@ -78,4 +80,20 @@ gridContainer.addEventListener('click', (e) => {
 
 modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
+});
+
+searchBar.addEventListener('input', () => {
+    let searchInput = searchBar.value.toUpperCase();
+    let cards = document.querySelectorAll('.card');
+    
+    cards.forEach((card) => {
+        let nameH2s = card.querySelector('h2');
+        let employeeName = nameH2s.innerHTML.toUpperCase();
+        
+        if (!employeeName.includes(searchInput)) {
+            card.classList.add("hidden");
+        } else {
+            card.classList.remove("hidden");
+        }
+    });
 });

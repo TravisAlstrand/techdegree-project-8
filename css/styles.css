@@ -18,7 +18,10 @@ header {
 }
 
 h1,
-h2 {
+h2,
+.modal-close,
+.left-arrow,
+.right-arrow {
     color: var(--font-dark);
 }
 
@@ -44,7 +47,6 @@ h2 {
     border-radius: 10px;
     align-items: center;
     text-align: center;
-    cursor: pointer;
 }
 
 .avatar {
@@ -83,12 +85,31 @@ h2 {
     padding: 30px 20px;
 }
 
+.arrows-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+.left-arrow,
+.right-arrow,
+.modal-close,
+.card {
+    cursor: pointer;
+}
+
+.left-arrow,
+.right-arrow,
+.modal-close {
+    font-size: 2rem;
+}
+
 .modal-close {
     position: absolute;
     right: 15px;
     top: 0;
-    color: var(--font-dark);
-    cursor: pointer;
+    margin: 15px 0 0 0;
 }
 
 .hidden {

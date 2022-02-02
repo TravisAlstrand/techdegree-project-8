@@ -9,6 +9,7 @@
 body {
     position: relative;
     padding: 50px;
+    background-color: rgb(228, 241, 255);
     color: var(--font-main);
 }
 
@@ -21,7 +22,8 @@ h1,
 h2,
 .modal-close,
 .left-arrow,
-.right-arrow {
+.right-arrow,
+label {
     color: var(--font-dark);
 }
 
@@ -47,6 +49,15 @@ h2,
     border-radius: 10px;
     align-items: center;
     text-align: center;
+    background-color: white;
+    box-shadow: none;
+    transition: box-shadow .3s, border .3s, background-color .3s;
+}
+
+.card:hover {
+    background-color:rgb(255, 240, 240);
+    border: 2px solid #5ba7d3;
+    box-shadow: 5px 5px 5px 5px rgba(54, 99, 125, .5);
 }
 
 .avatar {
@@ -71,7 +82,7 @@ h2,
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(100, 100, 100, .4);
+    background: rgba(100, 100, 100, .8);
 }
 
 .modal {
@@ -103,6 +114,13 @@ h2,
 .right-arrow,
 .modal-close {
     font-size: 2rem;
+    transition: color .3s;
+}
+
+.left-arrow:hover,
+.right-arrow:hover,
+.modal-close:hover {
+    color: #5ba7d3;
 }
 
 .modal-close {
@@ -129,6 +147,7 @@ h2,
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 25px;
     }
 
     .card h2 {
